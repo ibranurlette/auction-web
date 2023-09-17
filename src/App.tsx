@@ -1,7 +1,17 @@
-import "./App.css";
+// import "./App.css";
+import { SignUp } from "./pages/Auth/Sign-up";
+import { SignIn } from "./pages/Auth/Sign-in";
+import { Layout } from "./pages/Layout";
+import { Profile } from "./pages/Profile";
 
 function App() {
-	return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+	return (
+		<>
+			<Layout>
+				<Profile />
+			</Layout>
+		</>
+	);
 }
 
 export default App;
