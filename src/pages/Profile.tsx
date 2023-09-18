@@ -73,7 +73,7 @@ export const Profile = () => {
 	});
 
 	return (
-		<>
+		<div className="h-screen">
 			<div className="flex justify-center items-center mt-10">
 				<img
 					className="h-40 w-40 rounded-full mr-10"
@@ -112,6 +112,6 @@ export const Profile = () => {
 			</div>
 
 			<div className="flex flex-col justify-center">{rows}</div>
-		</>
+		</div>
 	);
 };
