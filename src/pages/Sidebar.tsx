@@ -9,12 +9,11 @@ export const Sidebar = () => {
 	const [openNotif, setOpenNotif] = useState<boolean>(false);
 	const [openMessage, setOpenMessage] = useState<boolean>(false);
 
-	console.log;
 	return (
 		<div
 			className={`${
 				!openNotif && !openMessage ? "w-2/6" : "w-20"
-			} mt-10 ml-3 flex flex-col justify-between mb-5`}
+			} mt-6 ml-3 flex flex-col justify-between mb-5`}
 		>
 			{/* Sidebar content */}
 			<div>
