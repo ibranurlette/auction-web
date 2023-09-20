@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ModalCreate } from "./ModalCreate";
-import { ModalNotification } from "./ModalNotification";
+import { Notification } from "./Notification";
 import { IconBeranda } from "./Icon/IconBeranda";
 import { IconMessage } from "./Icon/IconMessage";
 import { IconOther } from "./Icon/IconOther";
@@ -55,7 +55,7 @@ export const Sidebar = () => {
 						</button>
 					</li>
 					<li className="flex items-center">
-						<ModalNotification
+						<Notification
 							openMessage={openMessage}
 							openNotif={openNotif}
 							isOpenNotif={setOpenNotif}
