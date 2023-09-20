@@ -4,12 +4,13 @@ import { SignIn } from "./pages/Auth/Sign-in";
 import { Layout } from "./pages/Layout";
 import { Profile } from "./pages/Profile";
 import { Beranda } from "./pages/Beranda";
+import { Message } from "./pages/Message";
 
 function App() {
 	return (
 		<div className="w-screen">
 			<Layout>
-				<Beranda />
+				<Message />
 			</Layout>
 		</div>
 	);
