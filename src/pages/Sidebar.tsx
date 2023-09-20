@@ -39,7 +39,7 @@ export const Sidebar = () => {
 					</li>
 					<li className="flex items-center">
 						<button
-							onClick={() => setOpenMessage(!openMessage)}
+							onClick={() => setOpenMessage(true)}
 							className={`${
 								!openNotif && !openMessage
 									? "px-3 justify-start w-full"

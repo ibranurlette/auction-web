@@ -12,7 +12,7 @@ function App() {
 		// 	{/* <SignUp /> */}
 		// </div>
 		<Layout>
-			<Beranda />
+			<Message />
 		</Layout>
 	);
 }

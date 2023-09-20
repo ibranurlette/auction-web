@@ -9,10 +9,7 @@ export const Layout = ({ children }: any) => {
 			<div className="h-screen bg-gray-200 w-px" />
 
 			{/* Right Content */}
-			<div className="overflow-y-scroll w-full h-screen px-6 py-6">
-				{/* Content area */}
-				{children}
-			</div>
+			<div className="overflow-y-scroll w-full h-screen">{children}</div>
 		</div>
 	);
 };
