@@ -1,7 +1,7 @@
 export const SignUp = () => {
 	return (
 		<>
-			<div className="w-full max-w-xs bg-white border border-gray-300 border-solid rounded px-8 pt-6 pb-8 mb-4">
+			<div className="w-full max-w-xs  border border-gray-300 border-solid rounded px-8 pt-6 pb-8 mb-4">
 				<h1 className="font-sans text-3xl font-bold mb-5">LelangID</h1>
 				<p className="font-sans mb-5 font-semibold text-gray-500">
 					Lelang Barang anda, dan dapatkan penawaran terbaik

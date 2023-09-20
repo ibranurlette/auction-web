@@ -2,17 +2,18 @@
 import { SignUp } from "./pages/Auth/Sign-up";
 import { SignIn } from "./pages/Auth/Sign-in";
 import { Layout } from "./pages/Layout";
-import { Profile } from "./pages/Profile";
 import { Beranda } from "./pages/Beranda";
+import { Profile } from "./pages/Profile";
 import { Message } from "./pages/Message";
 
 function App() {
 	return (
-		<div className="w-screen">
-			<Layout>
-				<Message />
-			</Layout>
-		</div>
+		// <div className="w-screen flex flex-col justify-center items-center text-center">
+		// 	{/* <SignUp /> */}
+		// </div>
+		<Layout>
+			<Beranda />
+		</Layout>
 	);
 }
 

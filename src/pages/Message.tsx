@@ -1,3 +1,6 @@
+import { IconImage } from "./Icon/IconImage";
+import { IconSmile } from "./Icon/IconSmile";
+
 export const Message = () => {
 	const message = [
 		{
@@ -96,53 +99,14 @@ export const Message = () => {
 				<div className="p-4">
 					<div className="w-full border border-gray-300 border-solid py-2 px-4 rounded-full flex justify-between">
 						<div className="w-full flex">
-							<svg
-								viewBox="0 0 16 16"
-								fill="currentColor"
-								height="1.7em"
-								width="1.7em"
-								className="inline-block mr-3"
-							>
-								<path
-									fillRule="evenodd"
-									d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zM5 8a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zM5.32 9.636a.75.75 0 011.038.175l.007.009c.103.118.22.222.35.31.264.178.683.37 1.285.37.602 0 1.02-.192 1.285-.371.13-.088.247-.192.35-.31l.007-.008a.75.75 0 111.222.87l-.614-.431c.614.43.614.431.613.431v.001l-.001.002-.002.003-.005.007-.014.019a1.984 1.984 0 01-.184.213c-.16.166-.338.316-.53.445-.63.418-1.37.638-2.127.629-.946 0-1.652-.308-2.126-.63a3.32 3.32 0 01-.715-.657l-.014-.02-.005-.006-.002-.003v-.002h-.001l.613-.432-.614.43a.75.75 0 01.183-1.044h.001z"
-								/>
-							</svg>
+							<IconSmile />
 							<textarea
 								placeholder="Kirim pesan..."
 								className="w-full rounded-md resize-y font-medium focus:outline-none"
 								rows={1}
 							/>
 						</div>
-						<svg
-							viewBox="0 0 512 512"
-							fill="currentColor"
-							height="1.7em"
-							width="1.7em"
-						>
-							<path
-								fill="none"
-								stroke="currentColor"
-								strokeLinejoin="round"
-								strokeWidth={32}
-								d="M96 80 H416 A48 48 0 0 1 464 128 V384 A48 48 0 0 1 416 432 H96 A48 48 0 0 1 48 384 V128 A48 48 0 0 1 96 80 z"
-							/>
-							<path
-								fill="none"
-								stroke="currentColor"
-								strokeMiterlimit={10}
-								strokeWidth={32}
-								d="M368 176 A32 32 0 0 1 336 208 A32 32 0 0 1 304 176 A32 32 0 0 1 368 176 z"
-							/>
-							<path
-								fill="none"
-								stroke="currentColor"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={32}
-								d="M304 335.79l-90.66-90.49a32 32 0 00-43.87-1.3L48 352M224 432l123.34-123.34a32 32 0 0143.11-2L464 368"
-							/>
-						</svg>
+						<IconImage />
 					</div>
 				</div>
 			</div>
