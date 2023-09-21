@@ -13,14 +13,16 @@ export const ButtonOpenCreate = ({
 		<button
 			className={`${
 				!openNotif && !openMessage
-					? "px-3 justify-start w-full"
+					? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4"
 					: "px-1 justify-center w-3/4"
 			} bg-white flex items-center py-2 mr-3 hover:border-transparent hover:bg-gray-100`}
 			onClick={isOpen}
 		>
 			<IconCreated />
 			{!openNotif && !openMessage ? (
-				<h2 className="text-md font-normal ml-3">Buat</h2>
+				<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
+					Buat
+				</h2>
 			) : (
 				""
 			)}

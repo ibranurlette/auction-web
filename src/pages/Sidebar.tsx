@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { CreateLelang } from "./CreateLelang";
 import { Notification } from "./Notification";
-import { IconBeranda } from "./Icon/IconBeranda";
-import { IconMessage } from "./Icon/IconMessage";
-import { IconOther } from "./Icon/IconOther";
+import { IconBeranda, IconMessage, IconOther } from "./Icon";
 
 export const Sidebar = () => {
 	const [openNotif, setOpenNotif] = useState<boolean>(false);
@@ -12,26 +10,43 @@ export const Sidebar = () => {
 	return (
 		<div
 			className={`${
-				!openNotif && !openMessage ? "w-2/6" : "w-20"
+				!openNotif && !openMessage
+					? "lg:w-2/6 md:w-20 max-sm:w-20 sm:w-20"
+					: "w-20"
 			} mt-6 ml-3 flex flex-col justify-between mb-5`}
 		>
 			{/* Sidebar content */}
 			<div>
 				<h2 className="text-xl font-semibold ml-4">
-					{openNotif || openMessage ? "LD" : "LelangID"}
+					{openNotif || openMessage ? (
+						"LD"
+					) : (
+						<>
+							<span className="hidden max-sm:inline sm:inline md:inline lg:hidden">
+								LD
+							</span>
+							<span className="hidden md:hidden max-sm:hidden sm:hidden lg:inline">
+								LelangID
+							</span>
+						</>
+					)}
 				</h2>
 				<ul className="space-y-6 mt-10 ">
 					<li className="flex items-center">
 						<button
 							className={`${
 								!openNotif && !openMessage
-									? "px-3 justify-start w-full"
+									? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4 bg-gray-200"
 									: "px-1 justify-center w-3/4"
 							} bg-white flex items-center text-center py-2 mr-3 hover:border-transparent hover:bg-gray-100`}
 						>
 							<IconBeranda />
 							{!openNotif && !openMessage ? (
-								<h2 className="text-md font-normal ml-3">Beranda</h2>
+								<>
+									<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
+										Beranda
+									</h2>
+								</>
 							) : (
 								""
 							)}
@@ -42,13 +57,15 @@ export const Sidebar = () => {
 							onClick={() => setOpenMessage(true)}
 							className={`${
 								!openNotif && !openMessage
-									? "px-3 justify-start w-full"
+									? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4"
 									: "px-1 justify-center w-3/4"
 							} bg-white flex items-center text-center py-2 mr-3 hover:border-transparent hover:bg-gray-100`}
 						>
 							<IconMessage />
 							{!openNotif && !openMessage ? (
-								<h2 className="text-md font-normal ml-3">Pesan</h2>
+								<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
+									Pesan
+								</h2>
 							) : (
 								""
 							)}
@@ -70,7 +87,7 @@ export const Sidebar = () => {
 						<button
 							className={`${
 								!openNotif && !openMessage
-									? "px-3 justify-start w-full"
+									? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4"
 									: "px-1 justify-center w-3/4"
 							} bg-white flex items-center text-center py-2 mr-3 hover:border-transparent hover:bg-gray-100`}
 						>
@@ -80,7 +97,9 @@ export const Sidebar = () => {
 								alt="nature image"
 							/>
 							{!openNotif && !openMessage ? (
-								<h2 className="text-md font-normal ml-3">Profil</h2>
+								<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
+									Profil
+								</h2>
 							) : (
 								""
 							)}
@@ -93,13 +112,15 @@ export const Sidebar = () => {
 				<button
 					className={`${
 						!openNotif && !openMessage
-							? "px-3 justify-start w-full"
+							? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4"
 							: "px-1 justify-center w-3/4"
 					} bg-white flex items-center text-center py-2 mr-3 hover:border-transparent hover:bg-gray-100`}
 				>
 					<IconOther />
 					{!openNotif && !openMessage ? (
-						<h2 className="text-md font-normal ml-3">Lainnya</h2>
+						<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
+							Lainnya
+						</h2>
 					) : (
 						""
 					)}
