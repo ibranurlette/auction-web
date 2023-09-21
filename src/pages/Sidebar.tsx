@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ModalCreate } from "./ModalCreate";
+import { CreateLelang } from "./CreateLelang";
 import { Notification } from "./Notification";
 import { IconBeranda } from "./Icon/IconBeranda";
 import { IconMessage } from "./Icon/IconMessage";
@@ -63,7 +63,7 @@ export const Sidebar = () => {
 						/>
 					</li>
 					<li className="flex items-center">
-						<ModalCreate openMessage={openMessage} openNotif={openNotif} />
+						<CreateLelang openMessage={openMessage} openNotif={openNotif} />
 					</li>
 
 					<li className="flex items-center">
