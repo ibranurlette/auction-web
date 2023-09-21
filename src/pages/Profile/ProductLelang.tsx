@@ -7,7 +7,11 @@ export const ProductLelang = () => {
 	images.forEach((image, index) => {
 		currentRow.push(
 			<div key={image.id} className="flex-1 p-0.5 justify-center">
-				<img src={imageSource} alt={image.caption} className="w-full h-80" />
+				<img
+					src={imageSource}
+					alt={image.caption}
+					className="w-full lg:h-80 md:h-60 max-sm:h-28 sm:40"
+				/>
 			</div>
 		);
 
@@ -25,7 +29,9 @@ export const ProductLelang = () => {
 	return (
 		<>
 			<h4 className="font-semibold text-sm my-4 text-center">BARANG LELANG</h4>
-			<div className="flex flex-col justify-center px-6 pb-6">{rows}</div>
+			<div className="flex flex-col justify-center md:px-6 sm:px-6 max-sm:px-2 pb-6">
+				{rows}
+			</div>
 		</>
 	);
 };
