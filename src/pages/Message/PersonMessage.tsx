@@ -4,7 +4,7 @@ export const PersonMessage = () => {
 	return (
 		<div className="basis-full h-screen flex flex-col justify-between">
 			<div>
-				<div>
+				<div className="border-b">
 					<div className="flex items-center m-4">
 						<img
 							className="h-12 w-12 rounded-full mr-4"
@@ -18,7 +18,6 @@ export const PersonMessage = () => {
 							</div>
 						</div>
 					</div>
-					<div className="bg-gray-200 h-px" />
 				</div>
 
 				<div className="flex flex-col items-center mt-6">
