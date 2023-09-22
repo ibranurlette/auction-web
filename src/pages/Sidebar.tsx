@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { CreateLelang } from "./CreateLelang";
 import { Notification } from "./Notification";
 import { IconBeranda, IconMessage, IconOther } from "./Icon";
@@ -13,7 +14,7 @@ export const Sidebar = () => {
 				!openNotif && !openMessage
 					? "lg:w-2/6 md:w-16 max-sm:w-16 sm:w-16"
 					: "w-16"
-			}  flex flex-col justify-between ml-3 border-r`}
+			}  flex flex-col justify-between px-2 border-r`}
 		>
 			{/* Sidebar content */}
 			<div className="mt-6">
@@ -33,43 +34,51 @@ export const Sidebar = () => {
 				</h2>
 				<ul className="space-y-6 mt-10 ">
 					<li className="flex items-center">
-						<button
-							className={`${
-								!openNotif && !openMessage
-									? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4 bg-gray-200"
-									: "px-1 justify-center w-3/4"
-							} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100`}
-						>
-							<IconBeranda />
-							{!openNotif && !openMessage ? (
-								<>
-									<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
-										Beranda
-									</h2>
-								</>
-							) : (
-								""
-							)}
-						</button>
+						<NavLink to="/" className="w-full text-black hover:text-black">
+							<button
+								onClick={() => {
+									setOpenMessage(false);
+									setOpenNotif(false);
+								}}
+								className={`${
+									!openNotif && !openMessage
+										? "lg:px-3 md:px-1 max-sm:px-1 lg:justify-start md:justify-center max-sm:justify-center bg-gray-200"
+										: "px-1 justify-center w-3/4"
+								} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100 lg:w-full md:w-12 max-sm:w-12`}
+							>
+								<IconBeranda />
+								{!openNotif && !openMessage ? (
+									<>
+										<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
+											Beranda
+										</h2>
+									</>
+								) : (
+									""
+								)}
+							</button>
+						</NavLink>
 					</li>
 					<li className="flex items-center">
-						<button
-							onClick={() => setOpenMessage(true)}
-							className={`${
-								!openNotif && !openMessage
-									? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4"
-									: "px-1 justify-center w-3/4"
-							} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100`}
-						>
-							<IconMessage />
-							{!openNotif && !openMessage ? (
-								<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
-									Pesan
-								</h2>
-							) : (
-								""
-							)}
-						</button>
+						<NavLink to="/pesan" className="w-full text-black hover:text-black">
+							<button
+								onClick={() => setOpenMessage(true)}
+								className={`${
+									!openNotif && !openMessage
+										? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center"
+										: "px-1 justify-center w-3/4"
+								} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100 lg:w-full md:w-12 max-sm:w-12`}
+							>
+								<IconMessage />
+								{!openNotif && !openMessage ? (
+									<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
+										Pesan
+									</h2>
+								) : (
+									""
+								)}
+							</button>
+						</NavLink>
 					</li>
 					<li className="flex items-center">
 						<Notification
@@ -84,26 +93,35 @@ export const Sidebar = () => {
 					</li>
 
 					<li className="flex items-center">
-						<button
-							className={`${
-								!openNotif && !openMessage
-									? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4"
-									: "px-1 justify-center w-3/4"
-							} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100`}
+						<NavLink
+							to="/profile"
+							className="w-full text-black hover:text-black"
 						>
-							<img
-								className="h-7 w-7 rounded-full border-black border-2 border-solid"
-								src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-								alt="nature image"
-							/>
-							{!openNotif && !openMessage ? (
-								<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
-									Profil
-								</h2>
-							) : (
-								""
-							)}
-						</button>
+							<button
+								onClick={() => {
+									setOpenMessage(false);
+									setOpenNotif(false);
+								}}
+								className={`${
+									!openNotif && !openMessage
+										? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center"
+										: "px-1 justify-center w-3/4"
+								} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100 lg:w-full md:w-12 max-sm:w-12`}
+							>
+								<img
+									className="h-7 w-7 rounded-full border-black border-2 border-solid"
+									src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+									alt="nature image"
+								/>
+								{!openNotif && !openMessage ? (
+									<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
+										Profil
+									</h2>
+								) : (
+									""
+								)}
+							</button>
+						</NavLink>
 					</li>
 				</ul>
 			</div>
@@ -112,9 +130,9 @@ export const Sidebar = () => {
 				<button
 					className={`${
 						!openNotif && !openMessage
-							? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1  md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4"
+							? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1  md:justify-center max-sm:justify-center"
 							: "px-1 justify-center w-3/4"
-					} py-0 bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100`}
+					} py-0 bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100 lg:w-full md:w-12 max-sm:w-12`}
 				>
 					<IconOther />
 					{!openNotif && !openMessage ? (

@@ -1,4 +1,4 @@
-// import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import { SignUp } from "./pages/Auth/Sign-up";
 import { SignIn } from "./pages/Auth/Sign-in";
 import { Layout } from "./pages/Layout";
@@ -8,12 +8,34 @@ import { Message } from "./pages/Message";
 
 function App() {
 	return (
-		// <div className="w-screen flex flex-col justify-center items-center text-center">
-		// 	{/* <SignUp /> */}
-		// </div>
-		<Layout>
-			<Profile />
-		</Layout>
+		<Routes>
+			<Route path="/sign-in" element={<SignIn />} />
+			<Route path="/sign-up" element={<SignUp />} />
+			<Route
+				path="/"
+				element={
+					<Layout>
+						<Beranda />
+					</Layout>
+				}
+			/>
+			<Route
+				path="/profile"
+				element={
+					<Layout>
+						<Profile />
+					</Layout>
+				}
+			/>
+			<Route
+				path="/pesan"
+				element={
+					<Layout>
+						<Message />
+					</Layout>
+				}
+			/>
+		</Routes>
 	);
 }
 
