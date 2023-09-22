@@ -11,13 +11,13 @@ export const Sidebar = () => {
 		<div
 			className={`${
 				!openNotif && !openMessage
-					? "lg:w-2/6 md:w-20 max-sm:w-20 sm:w-20"
-					: "w-20"
-			} mt-6 ml-3 flex flex-col justify-between mb-5`}
+					? "lg:w-2/6 md:w-16 max-sm:w-16 sm:w-16"
+					: "w-16"
+			}  flex flex-col justify-between ml-3 border-r`}
 		>
 			{/* Sidebar content */}
-			<div>
-				<h2 className="text-xl font-semibold ml-4">
+			<div className="mt-6">
+				<h2 className="text-xl font-semibold ml-3">
 					{openNotif || openMessage ? (
 						"LD"
 					) : (
@@ -38,7 +38,7 @@ export const Sidebar = () => {
 								!openNotif && !openMessage
 									? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4 bg-gray-200"
 									: "px-1 justify-center w-3/4"
-							} bg-white flex items-center text-center py-2 mr-3 hover:border-transparent hover:bg-gray-100`}
+							} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100`}
 						>
 							<IconBeranda />
 							{!openNotif && !openMessage ? (
@@ -59,7 +59,7 @@ export const Sidebar = () => {
 								!openNotif && !openMessage
 									? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4"
 									: "px-1 justify-center w-3/4"
-							} bg-white flex items-center text-center py-2 mr-3 hover:border-transparent hover:bg-gray-100`}
+							} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100`}
 						>
 							<IconMessage />
 							{!openNotif && !openMessage ? (
@@ -89,7 +89,7 @@ export const Sidebar = () => {
 								!openNotif && !openMessage
 									? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4"
 									: "px-1 justify-center w-3/4"
-							} bg-white flex items-center text-center py-2 mr-3 hover:border-transparent hover:bg-gray-100`}
+							} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100`}
 						>
 							<img
 								className="h-7 w-7 rounded-full border-black border-2 border-solid"
@@ -108,13 +108,13 @@ export const Sidebar = () => {
 				</ul>
 			</div>
 
-			<div className="flex items-center">
+			<div className="flex items-center mb-6">
 				<button
 					className={`${
 						!openNotif && !openMessage
-							? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4"
+							? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1  md:justify-center max-sm:justify-center lg:w-full md:w-3/4 max-sm:w-3/4"
 							: "px-1 justify-center w-3/4"
-					} bg-white flex items-center text-center py-2 mr-3 hover:border-transparent hover:bg-gray-100`}
+					} py-0 bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100`}
 				>
 					<IconOther />
 					{!openNotif && !openMessage ? (

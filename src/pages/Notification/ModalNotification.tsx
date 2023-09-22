@@ -19,7 +19,10 @@ export const ModalNotification = ({
 }: ModalNotificationProps) => {
 	return (
 		<div className="flex items-center justify-center ">
-			<div className="bg-white p-4 overflow-y-scroll bottom-0 h-screen w-1/4 fixed left-24 shadow-[rgba(0,0,15,0.2)_6px_5px_4px_0px] rounded-xl">
+			<div
+				style={{ left: 72 }}
+				className="bg-white p-4 overflow-y-scroll bottom-0 h-screen lg:w-80 md:w-80 max-sm:w-80 sm:w-80  fixed  shadow-[rgba(0,0,15,0.2)_6px_5px_4px_0px] rounded-xl"
+			>
 				<h2 className="font-bold text-2xl text-black">Notifikasi</h2>
 				<div className="font-bold text-md text-black my-3">Hari Ini</div>
 
