@@ -4,8 +4,8 @@ interface ModalCreateProps {
 export const ModalCreate = ({ isClose }: ModalCreateProps) => {
 	return (
 		<>
-			<div className=" justify-center items-center  flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-				<div className="relative my-6 mx-auto w-1/2">
+			<div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+				<div className="relative my-6 mx-auto lg:w-1/2 sm:w-3/4 max-sm:w-4/5">
 					{/*content*/}
 					<div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full h-full  bg-white outline-none focus:outline-none">
 						{/*header*/}
@@ -29,7 +29,7 @@ export const ModalCreate = ({ isClose }: ModalCreateProps) => {
 							</p>
 
 							<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mb-6 px-4 rounded-lg">
-								Pilih dari komputer
+								Pilih dari perangkat
 							</button>
 						</div>
 						{/*footer*/}
