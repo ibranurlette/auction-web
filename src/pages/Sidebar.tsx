@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { CreateLelang } from "./CreateLelang";
 import { Notification } from "./Notification";
 import { IconBeranda, IconMessage, IconOther } from "./Icon";
+import logo from "../assets/LD-logo.png";
 
 export const Sidebar = () => {
 	const [openNotif, setOpenNotif] = useState<boolean>(false);
@@ -18,15 +19,17 @@ export const Sidebar = () => {
 		>
 			{/* Sidebar content */}
 			<div className="mt-6">
-				<h2 className="text-xl font-semibold ml-3">
+				<h2 className="text-xl font-semibold">
 					{openNotif || openMessage ? (
-						"LD"
+						// "LD"
+						<img src={logo} alt="LD-logo" />
 					) : (
 						<>
 							<span className="hidden max-sm:inline sm:inline md:inline lg:hidden">
-								LD
+								{/* LD */}
+								<img src={logo} alt="LD-logo" />
 							</span>
-							<span className="hidden md:hidden max-sm:hidden sm:hidden lg:inline">
+							<span className="hidden md:hidden max-sm:hidden sm:hidden lg:inline ml-3">
 								LelangID
 							</span>
 						</>
