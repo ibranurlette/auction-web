@@ -5,6 +5,7 @@ import { Layout } from "./pages/Layout";
 import { Beranda } from "./pages/Beranda";
 import { Profile } from "./pages/Profile";
 import { Message } from "./pages/Message";
+import { Search } from "./pages/Search";
 
 function App() {
 	return (
@@ -20,10 +21,10 @@ function App() {
 				}
 			/>
 			<Route
-				path="/profile"
+				path="/search"
 				element={
 					<Layout>
-						<Profile />
+						<Search />
 					</Layout>
 				}
 			/>
@@ -32,6 +33,14 @@ function App() {
 				element={
 					<Layout>
 						<Message />
+					</Layout>
+				}
+			/>
+			<Route
+				path="/profile"
+				element={
+					<Layout>
+						<Profile />
 					</Layout>
 				}
 			/>

@@ -11,17 +11,20 @@ interface ModalNotificationProps {
 	isOpenNotif: (openNotif: boolean) => void;
 	openNotif: boolean;
 	openMessage: boolean;
+	openSearch: boolean;
 }
 
 export const Notification = ({
 	isOpenNotif,
 	openNotif,
 	openMessage,
+	openSearch,
 }: ModalNotificationProps) => {
 	return (
 		<>
 			<ButtonOpenNotification
 				openNotif={openNotif}
+				openSearch={openSearch}
 				openMessage={openMessage}
 				isOpenNotif={isOpenNotif}
 			/>

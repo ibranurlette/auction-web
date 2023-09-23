@@ -5,9 +5,14 @@ import { ButtonOpenCreate } from "./ButtonOpenCreate";
 interface CreateLelangProps {
 	openNotif: boolean;
 	openMessage: boolean;
+	openSearch: boolean;
 }
 
-export const CreateLelang = ({ openNotif, openMessage }: CreateLelangProps) => {
+export const CreateLelang = ({
+	openNotif,
+	openMessage,
+	openSearch,
+}: CreateLelangProps) => {
 	const [showModal, setShowModal] = useState(false);
 
 	return (
@@ -15,6 +20,7 @@ export const CreateLelang = ({ openNotif, openMessage }: CreateLelangProps) => {
 			<ButtonOpenCreate
 				openNotif={openNotif}
 				openMessage={openMessage}
+				openSearch={openSearch}
 				isOpen={() => setShowModal(true)}
 			/>
 			{showModal ? <ModalCreate isClose={() => setShowModal(false)} /> : null}

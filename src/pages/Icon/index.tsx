@@ -10,3 +10,6 @@ export * from "./IconOther";
 export * from "./IconSave";
 export * from "./IconShare";
 export * from "./IconSmile";
+export * from "./IconSearch";
+export * from "./IconCompass";
+export * from "./IconCancel";
