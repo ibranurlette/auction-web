@@ -5,7 +5,7 @@ import { Layout } from "./pages/Layout";
 import { Beranda } from "./pages/Beranda";
 import { Profile } from "./pages/Profile";
 import { Message } from "./pages/Message";
-import { Search } from "./pages/Search";
+import { Explore } from "./pages/Explore";
 
 function App() {
 	return (
@@ -21,10 +21,10 @@ function App() {
 				}
 			/>
 			<Route
-				path="/search"
+				path="/explore"
 				element={
 					<Layout>
-						<Search />
+						<Explore />
 					</Layout>
 				}
 			/>

@@ -75,9 +75,9 @@ export const Sidebar = () => {
 							isOpenNotif={setOpenNotif}
 						/>
 					</li>
-					{/* <li className="flex items-center">
+					<li className="flex items-center">
 						<NavLink
-							to="/search"
+							to="/explore"
 							className="w-full text-black hover:text-black"
 						>
 							<button
@@ -104,7 +104,7 @@ export const Sidebar = () => {
 								)}
 							</button>
 						</NavLink>
-					</li> */}
+					</li>
 					<li className="flex items-center">
 						<NavLink to="/pesan" className="w-full text-black hover:text-black">
 							<button
