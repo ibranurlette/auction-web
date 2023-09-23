@@ -1,7 +1,26 @@
-interface ModalCreateProps {
-	isClose: () => void;
+interface ActiveState {
+	beranda: boolean;
+	search: boolean;
+	explore: boolean;
+	message: boolean;
+	notification: boolean;
+	create: boolean;
+	profil: boolean;
 }
-export const ModalCreate = ({ isClose }: ModalCreateProps) => {
+
+interface ModalCreateProps {
+	active: ActiveState;
+	previousActive: ActiveState;
+	isClose: () => void;
+	isActive: React.Dispatch<React.SetStateAction<ActiveState>>;
+}
+
+export const ModalCreate = ({
+	active,
+	previousActive,
+	isClose,
+	isActive,
+}: ModalCreateProps) => {
 	return (
 		<>
 			<div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -15,7 +34,10 @@ export const ModalCreate = ({ isClose }: ModalCreateProps) => {
 							</h4>
 							<button
 								className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-								onClick={isClose}
+								onClick={() => {
+									isClose();
+									isActive({ ...previousActive });
+								}}
 							>
 								<span className="text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
 									×

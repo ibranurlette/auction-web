@@ -3,13 +3,33 @@ import { NavLink } from "react-router-dom";
 import { CreateLelang } from "./CreateLelang";
 import { Notification } from "./Notification";
 import { Search } from "./Search";
-import { IconBeranda, IconMessage, IconOther, IconCompass } from "./Icon";
+import {
+	IconBerandaOutline,
+	IconBeranda,
+	IconMessageOutline,
+	IconMessage,
+	IconOther,
+	IconCompassOutline,
+	IconCompass,
+} from "./Icon";
 import logo from "../assets/LD-logo.png";
 
 export const Sidebar = () => {
 	const [openNotif, setOpenNotif] = useState<boolean>(false);
 	const [openMessage, setOpenMessage] = useState<boolean>(false);
 	const [openSearch, setOpenSearch] = useState<boolean>(false);
+
+	const [active, setActive] = useState({
+		beranda: true,
+		search: false,
+		explore: false,
+		message: false,
+		notification: false,
+		create: false,
+		profil: false,
+	});
+
+	console.log("active", active);
 
 	return (
 		<div
@@ -45,17 +65,32 @@ export const Sidebar = () => {
 									setOpenMessage(false);
 									setOpenNotif(false);
 									setOpenSearch(false);
+									setActive((prevState) => ({
+										...prevState,
+										beranda: true,
+										search: false,
+										explore: false,
+										message: false,
+										notification: false,
+										create: false,
+										profil: false,
+									}));
 								}}
 								className={`${
 									!openNotif && !openMessage && !openSearch
 										? "lg:px-3 md:px-1 max-sm:px-1 lg:justify-start md:justify-center max-sm:justify-center bg-gray-200"
 										: "px-1 justify-center w-3/4"
-								} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100 lg:w-full md:w-12 max-sm:w-12`}
+								} bg-white flex items-center text-center hover:border-transparent focus:outline-none focus:ring focus:ring-white hover:bg-gray-100 lg:w-full md:w-12 max-sm:w-12`}
 							>
-								<IconBeranda />
+								{active.beranda ? <IconBeranda /> : <IconBerandaOutline />}
+
 								{!openNotif && !openMessage && !openSearch ? (
 									<>
-										<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
+										<h2
+											className={`${
+												active.beranda === true ? "font-bold" : "font-normal"
+											} text-md ml-3 md:hidden max-sm:hidden sm:hidden lg:inline`}
+										>
 											Beranda
 										</h2>
 									</>
@@ -70,9 +105,11 @@ export const Sidebar = () => {
 							openMessage={openMessage}
 							openNotif={openNotif}
 							openSearch={openSearch}
+							active={active}
 							isOpenMessage={setOpenMessage}
 							isOpenSearch={setOpenSearch}
 							isOpenNotif={setOpenNotif}
+							isActive={setActive}
 						/>
 					</li>
 					<li className="flex items-center">
@@ -85,17 +122,31 @@ export const Sidebar = () => {
 									setOpenMessage(false);
 									setOpenNotif(false);
 									setOpenSearch(false);
+									setActive((prevState) => ({
+										...prevState,
+										beranda: false,
+										search: false,
+										explore: true,
+										message: false,
+										notification: false,
+										create: false,
+										profil: false,
+									}));
 								}}
 								className={`${
 									!openNotif && !openMessage && !openSearch
 										? "lg:px-3 md:px-1 max-sm:px-1 lg:justify-start md:justify-center max-sm:justify-center bg-gray-200"
 										: "px-1 justify-center w-3/4"
-								} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100 lg:w-full md:w-12 max-sm:w-12`}
+								} bg-white flex items-center text-center hover:border-transparent lg:w-full md:w-12 max-sm:w-12 focus:outline-none focus:ring focus:ring-white hover:bg-gray-100`}
 							>
-								<IconCompass />
+								{active.explore ? <IconCompass /> : <IconCompassOutline />}
 								{!openNotif && !openMessage && !openSearch ? (
 									<>
-										<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
+										<h2
+											className={`${
+												active.explore === true ? "font-bold" : "font-normal"
+											} text-md ml-3 md:hidden max-sm:hidden sm:hidden lg:inline`}
+										>
 											Jelajahi
 										</h2>
 									</>
@@ -112,14 +163,25 @@ export const Sidebar = () => {
 									setOpenMessage(true);
 									setOpenNotif(false);
 									setOpenSearch(false);
+									setActive((prevState) => ({
+										...prevState,
+										beranda: false,
+										search: false,
+										explore: false,
+										message: true,
+										notification: false,
+										create: false,
+										profil: false,
+									}));
 								}}
 								className={`${
 									!openNotif && !openMessage && !openSearch
 										? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center"
 										: "px-1 justify-center w-3/4"
-								} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100 lg:w-full md:w-12 max-sm:w-12`}
+								} bg-white flex items-center text-center hover:border-transparent lg:w-full md:w-12 max-sm:w-12 focus:outline-none focus:ring focus:ring-white hover:bg-gray-100`}
 							>
-								<IconMessage />
+								{active.message ? <IconMessage /> : <IconMessageOutline />}
+
 								{!openNotif && !openMessage && !openSearch ? (
 									<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
 										Pesan
@@ -135,8 +197,10 @@ export const Sidebar = () => {
 							openMessage={openMessage}
 							openNotif={openNotif}
 							openSearch={openSearch}
+							active={active}
 							isOpenNotif={setOpenNotif}
 							isOpenMessage={setOpenMessage}
+							isActive={setActive}
 						/>
 					</li>
 					<li className="flex items-center">
@@ -144,6 +208,8 @@ export const Sidebar = () => {
 							openMessage={openMessage}
 							openNotif={openNotif}
 							openSearch={openSearch}
+							active={active}
+							isActive={setActive}
 						/>
 					</li>
 
@@ -157,12 +223,22 @@ export const Sidebar = () => {
 									setOpenMessage(false);
 									setOpenNotif(false);
 									setOpenSearch(false);
+									setActive((prevState) => ({
+										...prevState,
+										beranda: false,
+										search: false,
+										explore: false,
+										message: false,
+										notification: false,
+										create: false,
+										profil: true,
+									}));
 								}}
 								className={`${
 									!openNotif && !openMessage && !openSearch
 										? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1 md:justify-center max-sm:justify-center"
 										: "px-1 justify-center w-3/4"
-								} bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100 lg:w-full md:w-12 max-sm:w-12`}
+								} bg-white flex items-center text-center hover:border-transparent lg:w-full md:w-12 max-sm:w-12 focus:outline-none focus:ring focus:ring-white hover:bg-gray-100`}
 							>
 								<img
 									className="h-7 w-7 rounded-full border-black border-2 border-solid"
@@ -170,7 +246,11 @@ export const Sidebar = () => {
 									alt="nature image"
 								/>
 								{!openNotif && !openMessage && !openSearch ? (
-									<h2 className="text-md font-normal ml-3 md:hidden max-sm:hidden sm:hidden lg:inline">
+									<h2
+										className={`${
+											active.profil === true ? "font-bold" : "font-normal"
+										} text-md ml-3 md:hidden max-sm:hidden sm:hidden lg:inline`}
+									>
 										Profil
 									</h2>
 								) : (
@@ -188,7 +268,7 @@ export const Sidebar = () => {
 						!openNotif && !openMessage && !openSearch
 							? "lg:px-3 lg:justify-start md:px-1 max-sm:px-1  md:justify-center max-sm:justify-center"
 							: "px-1 justify-center w-3/4"
-					} py-0 bg-white flex items-center text-center hover:border-transparent hover:bg-gray-100 lg:w-full md:w-12 max-sm:w-12`}
+					} py-0 bg-white flex items-center text-center hover:border-transparent lg:w-full md:w-12 max-sm:w-12 focus:outline-none focus:ring focus:ring-white hover:bg-gray-100`}
 				>
 					<IconOther />
 					{!openNotif && !openMessage && !openSearch ? (
