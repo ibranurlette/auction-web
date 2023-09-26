@@ -21,3 +21,4 @@ export * from "./IconCompass";
 export * from "./IconCancel";
 export * from "./IconArrowUp";
 export * from "./IconTimer";
+export * from "./IconEye";

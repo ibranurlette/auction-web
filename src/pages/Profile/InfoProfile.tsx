@@ -1,3 +1,4 @@
+import { IconEye } from "../Icon";
 export const InfoProfil = () => {
 	return (
 		<>
@@ -8,9 +9,9 @@ export const InfoProfil = () => {
 					alt="nature image"
 				/>
 				<div className="space-y-4">
-					<div className="md:flex items-center">
+					<div className="md:flex items-center justify-between">
 						<h1 className="mr-4 text-xl">beta_ibra</h1>
-						<button className="bg-gray-200 px-4 py-1 rounded-md font-medium">
+						<button className="bg-gray-100 px-4 py-1 rounded-md font-medium">
 							Edit profil
 						</button>
 					</div>
@@ -32,9 +33,20 @@ export const InfoProfil = () => {
 
 					<h4 className="font-semibold text-sm">Ibra Nurlette</h4>
 				</div>
+				<div className="bg-gray-100 rounded-lg border-solid p-4 ml-6">
+					<div className="flex justify-between">
+						<div className="mr-2 text-sm font-light">Saldo</div>
+						{/* <div>hide</div> */}
+						<IconEye />
+					</div>
+					<div className="font-medium text-xl text-gray-600 my-2">
+						Rp. 10.000.100
+					</div>
+					<div className="text-sm font-medium">LelangID</div>
+				</div>
 			</div>
 
-			<div className="flex space-x-2 border-b justify-center text-center py-4 lg:hidden">
+			<div className="flex space-x-2 justify-center text-center py-4 lg:hidden">
 				<div>
 					<p className="font-bold">49</p>
 					<p className="text-gray-500 text-md font-medium">kiriman</p>
