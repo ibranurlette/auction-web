@@ -29,8 +29,6 @@ export const Sidebar = () => {
 		profil: false,
 	});
 
-	console.log("active", active);
-
 	return (
 		<div
 			className={`${

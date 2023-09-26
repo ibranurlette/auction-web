@@ -3,8 +3,8 @@ export const IconSave = (props: React.SVGProps<SVGSVGElement>) => {
 		<svg
 			fill="none"
 			viewBox="0 0 15 15"
-			height="1.7em"
-			width="1.7em"
+			height="1.2em"
+			width="1.2em"
 			{...props}
 		>
 			<path

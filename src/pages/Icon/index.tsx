@@ -19,3 +19,4 @@ export * from "./IconSearch";
 export * from "./IconCompassOutline";
 export * from "./IconCompass";
 export * from "./IconCancel";
+export * from "./IconArrowUp";

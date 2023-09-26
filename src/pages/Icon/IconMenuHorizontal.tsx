@@ -3,8 +3,8 @@ export const IconMenuHorizontal = (props: React.SVGProps<SVGSVGElement>) => {
 		<svg
 			viewBox="0 0 21 21"
 			fill="currentColor"
-			height="1.7em"
-			width="1.7em"
+			height="1.2em"
+			width="1.2em"
 			{...props}
 		>
 			<g fill="currentColor" fillRule="evenodd">

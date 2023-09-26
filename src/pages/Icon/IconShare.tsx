@@ -7,8 +7,8 @@ export const IconShare = (props: React.SVGProps<SVGSVGElement>) => {
 			strokeLinejoin="round"
 			strokeWidth={2}
 			viewBox="0 0 24 24"
-			height="1.7em"
-			width="1.7em"
+			height="1.2em"
+			width="1.2em"
 			className="mr-4"
 			{...props}
 		>
