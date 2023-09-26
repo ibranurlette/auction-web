@@ -22,3 +22,4 @@ export * from "./IconCancel";
 export * from "./IconArrowUp";
 export * from "./IconTimer";
 export * from "./IconEye";
+export * from "./IconTrophy";

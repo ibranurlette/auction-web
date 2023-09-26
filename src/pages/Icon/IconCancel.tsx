@@ -3,9 +3,9 @@ export const IconCancel = (props: React.SVGProps<SVGSVGElement>) => {
 		<svg
 			viewBox="0 0 512 512"
 			fill="currentColor"
-			height="1.7em"
-			width="1.7em"
-			color="gray"
+			height={props.height}
+			width={props.width}
+			color={props.color}
 			{...props}
 		>
 			<path
