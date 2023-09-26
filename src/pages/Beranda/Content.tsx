@@ -6,6 +6,7 @@ import {
 	IconLove,
 	IconSave,
 	IconArrowUp,
+	IconTimer,
 } from "../Icon";
 
 interface ContentProps {
@@ -47,10 +48,14 @@ export const Content = ({ data }: ContentProps) => {
 					src={imageUrl}
 					alt="nature image"
 				/>
-				<div className="absolute bottom-2 right-2 bg-black bg-opacity-40 text-white p-1 rounded">
+				<div className="absolute w-full bottom-0 bg-black bg-opacity-40 text-white p-2 rounded flex items-center justify-between">
 					<div className="flex items-center">
-						<IconArrowUp className="text-white" />
-						<div className="ml-2">Rp 1.000.000</div>
+						<IconArrowUp color="white" />
+						<div className="ml-1 font-medium text-sm">Rp 1.000.000</div>
+					</div>
+					<div className="flex items-center">
+						<IconTimer color="white" />
+						<div className="ml-1 font-medium text-sm">1 Hari </div>
 					</div>
 				</div>
 			</div>
