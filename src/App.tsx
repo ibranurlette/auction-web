@@ -6,6 +6,7 @@ import { Beranda } from "./pages/Beranda";
 import { Profile } from "./pages/Profile";
 import { Message } from "./pages/Message";
 import { Explore } from "./pages/Explore";
+import { DetailLelang } from "./pages/DetailLelang";
 
 function App() {
 	return (
@@ -17,6 +18,14 @@ function App() {
 				element={
 					<Layout>
 						<Beranda />
+					</Layout>
+				}
+			/>
+			<Route
+				path="/detail-lelang"
+				element={
+					<Layout>
+						<DetailLelang />
 					</Layout>
 				}
 			/>
