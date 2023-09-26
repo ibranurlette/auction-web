@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 export const SignIn = () => {
+	console.log("tes aja");
 	return (
 		<div className="w-screen flex flex-col justify-center items-center text-center">
 			<div className="w-full max-w-xs bg-white border border-gray-300 border-solid rounded px-8 pt-6 pb-8 mb-4">
